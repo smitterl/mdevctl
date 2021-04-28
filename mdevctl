@@ -391,6 +391,8 @@ EOF
     exit 1
 }
 
+main() {
+
 if [ $# -lt 1 ]; then
     usage
 fi
@@ -1015,3 +1017,10 @@ case "$cmd" in
         fi
         ;;
 esac
+
+}
+
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	main
+fi
