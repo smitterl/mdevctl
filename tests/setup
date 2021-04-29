@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# all test data will be stored in subfolder ./data
+# the setup will per default create all files and set valid values
+# if possible to allow for a valid call of commands
+# specific tests then should update the values
+
+mkdir -p ./data
+
+persist_base=./data/mdevctl.d
+mkdir -p $persist_base
+
+mdev_base=./data/sys/bus/mdev/devices
+mkdir -p $mdev_base
+
+parent_base=./data/sys/class/mdev_bus
+mkdir -p $parent_base

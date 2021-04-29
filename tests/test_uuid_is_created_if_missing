@@ -1,0 +1,22 @@
+#!/bin/bash
+source ../mdevctl
+source ./setup
+
+####################################################
+cmd=define
+parent=some_parent_device
+type=some_type
+
+result=$(run_command 2>&1)
+
+if ! [[ "$?" -eq "0" ]] || [[ -z "$result" ]]; then
+	echo "$result"
+	exit 1
+fi
+
+uuid=
+run_command
+
+if [[ -z "$uuid" ]]; then
+	exit 1
+fi
